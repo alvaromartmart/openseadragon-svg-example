@@ -1,0 +1,15 @@
+{
+  "name": "openseadragon-svg-viewer",
+  "version": "1.0.0",
+  "description": "Simple example of using OpenSeadragon to render svg",
+  "main": "index.js",
+  "scripts": {
+    "serve": "http-server src"
+  },
+  "author": "Álvaro Martínez",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.0",
+    "openseadragon": "^3.0.0"
+  }
+}

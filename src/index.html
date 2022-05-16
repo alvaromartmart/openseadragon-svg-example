@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenSeadragon SVG viewer</title>
+    <style>
+        html,body{
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+    <script src="//openseadragon.github.io/openseadragon/openseadragon.min.js"></script>
+  </head>
+  <body>
+    <h1 style="height: 5vh">OpenSeadragon example</h1>
+    <div id="seadragon-viewer" style="width: 100vw; height: 90vh; max-height: 95vh"></div>
+    <script>
+        var viewer = OpenSeadragon({
+          id: "seadragon-viewer",
+          width:1,
+          height:1,
+          sprintStiffness: 0,
+          animationTime: 0.5,
+          prefixUrl: 'assets/images/',
+          showNavigator: true
+        });
+
+        viewer.open({
+            tileSource: {
+                buildPyramid: false,
+                type: 'image',
+                url: 'assets/rnaseq_metro.svg'
+            },
+            width: 1,
+        })
+        viewer.addOnceHandler('open', ()=>{
+            viewer.viewport.zoomTo(1, new OpenSeadragon.Point(0.5,0));
+        });
+      </script>
+  </body>
+</html>
